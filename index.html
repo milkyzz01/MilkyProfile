@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style>
         @keyframes gradientBackground {
             0% { background-color: #232526; }
@@ -25,6 +27,7 @@
             max-width: 400px;
             border-radius: 50%;
             position: relative;
+            border: 3px solid #343a40; /* Add border for better separation */
             z-index: 1;
         }
         .profile-img-bg {
@@ -69,9 +72,6 @@
         .typed-cursor {
             font-size: inherit;
             color: orange;
-        }
-        #education{
-            border-radius: 20px;
         }
 
         /* Custom CSS to adjust image size on md screens */
@@ -181,10 +181,102 @@
                 width: 45%;
                 margin-left: 28%;
             }
+
+    
         }
 
+        /* Transform up when hover the projects */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
         
+        .project-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* About Me Section Styles */
+        #about-me {
+            padding: 50px 0;
+            border-radius: 15px;
+        }
         
+        .profile-img-wrapper {
+            position: relative;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .about-me-content {
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+        .section-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #495057;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Swiper Slider Styles */
+        .swiper {
+            padding: 20px 0;
+        }
+
+        .skill-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #fff;
+        }
+
+        .swiper-pagination-bullet {
+            background: #fff;
+            opacity: 0.7;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: orange;
+        }
+
+        .swiper-slide img {
+            width: 100%; /* or a specific width if needed, e.g., 150px */
+            height: 150px; /* Set a fixed height */
+            object-fit: cover; /* This will crop the images to fit the height */
+            margin: 0 auto; /* Center the image horizontally */
+        }
+        .swiper-container {
+            width: 100%;
+            max-width: 300px; /* Set a max-width for the container */
+            margin: auto;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+        }
+
     </style>
 </head>
 <body>
@@ -231,7 +323,7 @@
         </div>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <div class="row align-items-center">
             <div class="col-md-6 text-center profile-container">
                 <div class="profile-img-bg d-none d-md-block" data-aos="fade-up"></div>
@@ -251,26 +343,49 @@
     </div>
     <br class="breakline"><br class="breakline"><br class="breakline"><br class="breakline">
 
-    <!-- education section -->
-    <div id="education" class="section mt-5 bg-secondary p-4" data-aos="fade-up" style="border-radius: 20px;">
+    <!-- About Me Section -->
+    <div class="container mt-5" id="about-me" data-aos="fade-up">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4">
+                <div class="profile-img-wrapper">
+                    <img src="Pic.jpg" class="profile-img" alt="About Me">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="about-me-content">
+                    <h2 class="section-title text-white fw-bold">About Me</h2>
+                    <p class="section-text text-white">
+                        As a person who wants to enter the IT industry, my passion for coding and familiarity with web technologies make me an ideal candidate. My skills have been refined through self-study, online courses, and personal projects, even though I do not currently have professional experience yet.
+                    </p>
+                    <p class="section-text text-white">
+                        I am eager to bring my dedication and enthusiasm to a dynamic team where I can continue to learn and grow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Education Section -->
+    <div id="education" class="section mt-5 bg-secondary p-4">
         <div class="container mt-1">
             <h2 class="text-white fw-bold">Education</h2>
             <div class="row mt-4">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="fade-up">
                     <div class="bg-dark text-white p-3 rounded education-card">
                         <img src="2.png" class="img-fluid rounded mb-3" alt="School Image">
                         <h5>Calubcub 1st Elementary School</h5>
                         <p>This is where I finished my primary education from 2008 to 2014.</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="fade-up">
                     <div class="bg-dark text-white p-3 rounded education-card">
                         <img src="3.jpg" class="img-fluid rounded mb-3" alt="School Image">
                         <h5>Joseph Marello Institute</h5>
                         <p>This is where I finished my secondary education from 2014 to 2020.</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="fade-up">
                     <div class="bg-dark text-white p-3 rounded">
                         <div class="image-bg education-card">
                             <img src="4.png" class="img-fluid rounded mb-5" alt="School Image">
@@ -283,84 +398,107 @@
         </div>
     </div>
 
-    <!-- Skill section -->
+    <!-- Skills Section -->
     <div id="skills" class="section" data-aos="fade-up">
         <div class="container text-white">
             <h2 class="fw-bold">Skills</h2>
-    
-            <!-- Carousel -->
-            <div id="skillsCarousel" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active bg-secondary main-wrapper">
-                        <div class="skill-wrapper">
-                        <img src="html.png" class="d-flex w-100" alt="Skill Image 1">
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper mt-4">
+                <div class="swiper-wrapper">
+                    <!-- Repeat this block for each skill -->
+                    <div class="swiper-slide">
+                        <div class="skill-card text-center p-3 bg-dark rounded">
+                            <img src="html.png" class="img-fluid mb-3" alt="HTML">
+                            <h5>HTML</h5>
                         </div>
                     </div>
-                    <div class="carousel-item bg-secondary main-wrapper">
-                        <div class="skill-wrapper">
-                            <img src="css.jpg" class="d-flex w-100" alt="Skill Image 1">
-                            </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card text-center p-3 bg-dark rounded">
+                            <img src="css.jpg" class="img-fluid mb-3" alt="CSS">
+                            <h5>CSS</h5>
+                        </div>
                     </div>
-                    <div class="carousel-item bg-secondary main-wrapper">
-                        <div class="skill-wrapper">
-                            <img src="js.png" class="d-flex w-100" alt="Skill Image 1">
-                            </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card text-center p-3 bg-dark rounded">
+                            <img src="js.png" class="img-fluid mb-3" alt="JavaScript">
+                            <h5>JavaScript</h5>
+                        </div>
                     </div>
-                    <div class="carousel-item bg-secondary main-wrapper">
-                        <div class="skill-wrapper">
-                            <img src="php.png" class="d-flex w-100" alt="Skill Image 1">
-                            </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card text-center p-3 bg-dark rounded">
+                            <img src="php.png" class="img-fluid mb-3" alt="PHP">
+                            <h5>PHP</h5>
+                        </div>
                     </div>
-                    <div class="carousel-item bg-secondary main-wrapper">
-                        <div class="skill-wrapper">
-                            <img src="vue.png" class="d-flex w-100" alt="Skill Image 1">
-                            </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card text-center p-3 bg-dark rounded">
+                            <img src="vue.png" class="img-fluid mb-3" alt="Vue.js">
+                            <h5>Vue.js</h5>
+                        </div>
                     </div>
-                    <div class="carousel-item bg-secondary main-wrapper">
-                        <div class="skill-wrapper">
-                            <img src="quasar.png" class="d-flex w-100" alt="Skill Image 1">
-                            </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card text-center p-3 bg-dark rounded">
+                            <img src="quasar.png" class="img-fluid mb-3" alt="Quasar Framework">
+                            <h5>Quasar</h5>
+                        </div>
                     </div>
-                    <div class="carousel-item bg-secondary main-wrapper">
-                        <div class="skill-wrapper">
-                            <img src="git.png" class="d-flex w-100" alt="Skill Image 1">
-                            </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card text-center p-3 bg-dark rounded">
+                            <img src="git.png" class="img-fluid mb-3" alt="Git">
+                            <h5>Git</h5>
+                        </div>
                     </div>
-                    <div class="carousel-item bg-secondary main-wrapper">
-                        <div class="skill-wrapper">
-                            <img src="bootstrap.png" class="d-flex w-100" alt="Skill Image 1">
-                            </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card text-center p-3 bg-dark rounded">
+                            <img src="bootstrap.png" class="img-fluid mb-3" alt="Bootstrap">
+                            <h5>Bootstrap</h5>
+                        </div>
                     </div>
-                    <div class="carousel-item bg-secondary main-wrapper">
-                        <div class="skill-wrapper">
-                            <img src="mysql.jpg" class="d-flex w-100" alt="Skill Image 1">
-                            </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card text-center p-3 bg-dark rounded">
+                            <img src="mysql.jpg" class="img-fluid mb-3" alt="MySQL">
+                            <h5>MySQL</h5>
+                        </div>
                     </div>
-                    <div class="carousel-item bg-secondary main-wrapper">
-                        <div class="skill-wrapper">
-                            <img src="nodejs.jpg" class="d-flex w-100" alt="Skill Image 1">
-                            </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card text-center p-3 bg-dark rounded">
+                            <img src="nodejs.jpg" class="img-fluid mb-3" alt="Node.js">
+                            <h5>Node.js</h5>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card text-center p-3 bg-dark rounded">
+                            <img src="laravel.png" class="img-fluid mb-3" alt="laravel">
+                            <h5>Laravel</h5>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card text-center p-3 bg-dark rounded">
+                            <img src="workbench.jpg" class="img-fluid mb-3" alt="laravel">
+                            <h5>MySQL Workbench</h5>
+                        </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#skillsCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#skillsCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Add Scrollbar (optional) -->
+                <div class="swiper-scrollbar"></div>
             </div>
         </div>
     </div>
 
-    <div id="projects" class="section bg-secondary" data-aos="fade-up" style="border-radius: 20px;">
+    <!-- Projects Section -->
+    <div id="projects" class="section bg-secondary">
         <div class="container">
             <h2 class="text-white fw-bold mb-4">Projects</h2>
             <div class="row mt-4" id="project-cards">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="fade-up">
                     <a href="https://github.com/milkyzz01/Todo-List/tree/menard-todo-list" target="_blank" class="text-decoration-none">
-                        <div class="bg-dark text-white p-3 rounded education-card">
+                        <div class="bg-dark text-white p-3 rounded education-card project-card">
                             <img src="todo.jpg" class="img-fluid rounded mb-3" alt="Todo List Project Image">
                             <h5 class="text-white">Todo List</h5>
                             <p class="text-white">A system where you can add, delete, update and complete todo list digitally.</p>
@@ -368,9 +506,9 @@
                         </div>
                     </a>
                 </div>                
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="fade-up">
                     <a href="https://github.com/milkyzz01/gradingsystem" target="_blank" class="text-decoration-none">
-                    <div class="bg-dark text-white p-3 rounded education-card">
+                    <div class="bg-dark text-white p-3 rounded education-card project-card">
                         <img src="grading.png" class="img-fluid rounded mb-3" alt="School Image">
                         <h5>Grading System</h5>
                         <p>A system where you can manage the enrolling and deleting students and input exams grades to calculate the final grades automatically.</p>
@@ -378,9 +516,9 @@
                     </div>
                     </a>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="fade-up">
                     <a href="https://github.com/milkyzz01/ESP32SYSTEM" target="_blank" class="text-decoration-none">
-                    <div class="bg-dark text-white p-3 rounded education-card">
+                    <div class="bg-dark text-white p-3 rounded education-card project-card">
                         <img src="iot.jpg" class="img-fluid rounded mb-3" alt="School Image">
                         <h5>ESP32 and IoT Devices</h5>
                         <p>A system where you can control IoT devices using a web interface.</p>
@@ -389,14 +527,24 @@
                   </a>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-md-12 col-md-12-custom mb-6">
+            <div class="row mt-4" data-aos="fade-up">
+                <div class="col-md-6 mb-6">
                     <a href="https://github.com/milkyzz01/DormManagementSystem" target="_blank" class="text-decoration-none">
-                    <div class="bg-dark text-white p-3 rounded education-card">
+                    <div class="bg-dark text-white p-3 rounded education-card project-card">
                         <img src="dorm.png" class="img-fluid rounded mb-3" alt="School Image">
                         <h5>Dormitory Management System</h5>
-                        <p>A sytem where you can manage the processes in a dormitory digitally</p>
+                        <p>A system where you can manage the processes in a dormitory digitally</p>
                         <p>Html, Css, Javascript, Php, Mysql</p>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-6 mb-6">
+                    <a href="https://github.com/milkyzz01/TOR-SYSTEM" target="_blank" class="text-decoration-none">
+                    <div class="bg-dark text-white p-3 rounded education-card project-card">
+                        <img src="tor.png" class="img-fluid rounded mb-3" alt="School Image">
+                        <h5>Student Records System</h5>
+                        <p>A system where you can add, delete, and manage student records</p>
+                        <p>VueJs, Bootstrap, Laravel or NodeJs, MySql</p>
                     </div>
                     </a>
                 </div>
@@ -411,13 +559,16 @@
             <p>Phone: +639694560912</p>
         </div>
     </footer>
-    
-    
 
+
+
+    <!-- Existing Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         AOS.init();
 
@@ -428,6 +579,43 @@
             loop: false,
             showCursor: true,
             cursorChar: '|',
+        });
+
+        // Initialize Swiper
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1400: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+            },
         });
     </script>
 
