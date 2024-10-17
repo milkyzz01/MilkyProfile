@@ -48,6 +48,38 @@
             position: relative;
             display: inline-block;
         }
+        .contact-btn {
+    
+    font-size: 1.5rem;
+    border: 2px solid white;
+    width: 100px;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+.contact-btn:hover {
+    background-color: white;
+    color: #333;
+}
+
+.contact-btn2 {
+    font-size: 1rem;
+    border: 2px solid white;
+    width: 100px;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+.contact-btn2:hover {
+    background-color: white;
+    color: #333;
+}
         .section {
             padding: 50px 0;
         }
@@ -505,78 +537,86 @@
             <h2 class="text-white fw-bold mb-4">Projects</h2>
             <div class="row mt-4" id="project-cards">
                 <div class="col-md-4 mb-4" data-aos="fade-up">
-                    <a href="https://github.com/milkyzz01/Todo-List/tree/menard-todo-list" target="_blank" class="text-decoration-none">
-                        <div class="bg-dark text-white p-3 rounded education-card project-card">
+                        <div class="bg-dark text-white p-3 rounded education-card project-card h-100">
                             <img src="todo.jpg" class="img-fluid rounded mb-3" alt="Todo List Project Image">
                             <h5 class="text-white">Todo List</h5>
                             <p class="text-white">A system where you can add, delete, update and complete todo list digitally.</p>
                             <p class="text-white">VueJs, Quasar Framework</p>
+                            <a href="https://github.com/milkyzz01/Todo-List/tree/menard-todo-list" class="contact-btn"><i class="fab fa-github"></i></a>
                         </div>
-                    </a>
                 </div>                
                 <div class="col-md-4 mb-4" data-aos="fade-up">
-                    <a href="https://github.com/milkyzz01/gradingsystem" target="_blank" class="text-decoration-none">
-                    <div class="bg-dark text-white p-3 rounded education-card project-card">
+                    <div class="bg-dark text-white p-3 rounded education-card project-card h-100">
                         <img src="grading.png" class="img-fluid rounded mb-3" alt="School Image">
                         <h5>Grading System</h5>
                         <p>A system where you can manage the enrolling and deleting students and input exams grades to calculate the final grades automatically.</p>
                         <p>Html, Css, Javascript, Php, Mysql</p>
+                        <a href="https://github.com/milkyzz01/gradingsystem" class="contact-btn"><i class="fab fa-github"></i></a>
                     </div>
-                    </a>
+                    
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up">
-                    <a href="https://github.com/milkyzz01/ESP32SYSTEM" target="_blank" class="text-decoration-none">
-                    <div class="bg-dark text-white p-3 rounded education-card project-card">
+                    <div class="bg-dark text-white p-3 rounded education-card project-card h-100">
                         <img src="iot.jpg" class="img-fluid rounded mb-3" alt="School Image">
                         <h5>ESP32 and IoT Devices</h5>
                         <p>A system where you can control IoT devices using a web interface.</p>
                         <p>Arduino IDE, C++</p>
+                        <a href="https://github.com/milkyzz01/ESP32SYSTEM" class="contact-btn"><i class="fab fa-github"></i></a>
                     </div>
-                  </a>
                 </div>
-            </div>
-            <div class="row mt-4" id="project-cards" data-aos="fade-up">
-                <div class="col-md-4 mb-5">
-                    <a href="https://github.com/milkyzz01/DormManagementSystem" target="_blank" class="text-decoration-none">
-                    <div class="bg-dark text-white p-3 rounded education-card project-card">
+                <div class="col-md-4 mb-4"> 
+                    <div class="bg-dark text-white p-3 rounded education-card project-card h-100">
                         <img src="dorm.png" class="img-fluid rounded mb-3" alt="School Image">
                         <h5>Dormitory Management System</h5>
                         <p>A system where you can manage the processes in a dormitory digitally</p>
                         <p>Html, Css, Javascript, Php, Mysql</p>
+                        <a href="https://github.com/milkyzz01/DormManagementSystem" class="contact-btn"><i class="fab fa-github"></i></a>
                     </div>
-                    </a>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <a href="https://github.com/milkyzz01/TOR-SYSTEM" target="_blank" class="text-decoration-none">
-                    <div class="bg-dark text-white p-3 rounded education-card project-card">
+                    <div class="bg-dark text-white p-3 rounded education-card project-card h-100">
                         <img src="tor.png" class="img-fluid rounded mb-3" alt="School Image">
                         <h5>Student Records System</h5>
                         <p>A system where you can add, delete, and manage student records</p>
                         <p>VueJs, Bootstrap, Laravel or NodeJs, MySql</p>
+                        <a href="https://github.com/milkyzz01/TOR-SYSTEM" class="contact-btn"><i class="fab fa-github"></i></a>
                     </div>
-                    </a>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <a href="https://github.com/milkyzz01/MovieHub/tree/front-end-moviehub" target="_blank" class="text-decoration-none">
-                    <div class="bg-dark text-white p-3 rounded education-card project-card">
+                    <div class="bg-dark text-white p-3 rounded education-card project-card h-100">
                         <img src="Moviehub.png" class="img-fluid rounded mb-3" alt="School Image">
                         <h5>MovieHub</h5>
                         <p>A UI design like netflix for browsing movies using TMDB API.</p>
                         <p>VueJs, Bootstrap, TMDB</p>
+                        <a href="https://github.com/milkyzz01/MovieHub/tree/front-end-moviehub" class="contact-btn"><i class="fab fa-github"></i></a>
                     </div>
-                    </a>
                 </div>
-                <div class="col-md-12 mb-4">
-                    <a href="https://github.com/milkyzz01/FE-Exam-Praxxys/tree/FE-Exam-Fastfood" target="_blank" class="text-decoration-none">
-                    <div class="bg-dark text-white p-3 rounded education-card project-card">
+                <div class="col-md-6 mb-4">
+                    <div class="bg-dark text-white p-3 rounded education-card project-card h-100">
                         <img src="order.png" class="img-fluid rounded mb-3" alt="School Image">
                         <h5>UI Order System</h5>
                         <p>A UI design for a ordering system using ionic via vue and capacitor.</p>
                         <p>VueJs, Bootstrap, Ionic, Capacitor</p>
+                        <div class="d-flex gap-3">
+                        <a href="https://github.com/milkyzz01/FE-Exam-Praxxys/tree/FE-Exam-Fastfood" class="contact-btn"> <i class="fab fa-github"></i></a>
                     </div>
-                    </a>
+                    </div>
                 </div>
-            </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="bg-dark text-white p-3 rounded education-card project-card h-100">
+                        <img src="estate.png" class="img-fluid rounded mb-3" alt="School Image">
+                        <h5>Real Estate Landing Page</h5>
+                        <p>A UI design for a real estate site using Html, Css, Js, Bootstrap.</p>
+                        <p>Bootstrap, Html, Css, JavaScript</p>
+                        <div class="d-flex gap-3">
+                            <a href="https://github.com/milkyzz01/RealEStateLandingpage" class="contact-btn"> <i class="fab fa-github"></i></a>
+                            <a href="https://caponpon-web-builder-assignment.netlify.app/" class="contact-btn2 d-flex align-items-center justify-content-center gap-1">Visit Site <i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+           
+        </div>
         </div>
     </div>
 
